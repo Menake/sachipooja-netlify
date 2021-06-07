@@ -45,7 +45,7 @@ const PhotoViewer = () => {
                         </FadeText>
                     </motion.div>
                 </div>
-                <div className="h-96 lg:h-96"></div>
+                <div className="h-96"></div>
                 <div className="relative sm:h-screen w-full z-10">
                     <div className="h-full w-full px-10 sm:absolute sm:left-1/20 sm:w-1/2 md:left-1/10 z-10 lg:w-2/5">
                         <motion.div className="md:p-0">
@@ -87,8 +87,8 @@ const PhotoViewer = () => {
                     </motion.div>
                 </div>
             </div>
-            <div>
-                <img src='/galle.png' className="right-0 bottom-0 z-0 w-1/2 opacity-50" layout="fill" />
+            <div className="relative">
+                <img src='/galle.png' className="absolute left-0 bottom-0 z-0 w-3/4 opacity-25" />
             </div>
         </div>
     )
