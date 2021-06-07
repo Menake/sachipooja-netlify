@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { motion, useAnimation } from 'framer-motion'
+import { useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
+
 import React from 'react'
 
 const InviteMessage = props => {
@@ -44,6 +46,7 @@ const InviteMessage = props => {
             </div>
         </motion.div>
     )
+    return null
 }
 
 export default InviteMessage

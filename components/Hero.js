@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { motion } from 'framer-motion'
 
 const Hero = () => {
@@ -19,7 +20,7 @@ const Hero = () => {
                 >
                     {'Sachi & Pooja are'}
                     <br />
-                    getting <span className="text-secondary">Married.</span>
+                getting <span className="text-secondary">Married.</span>
                 </motion.div>
                 <motion.div
                     className="w-full"
