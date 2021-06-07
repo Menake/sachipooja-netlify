@@ -15,7 +15,8 @@ export async function getStaticProps() {
         props: {
             images: [
                 {
-                    src: "/gallery/1.jpg"
+                    src: "/gallery/1.jpg",
+                    caption: "a test caption"
                 },
                 {
                     src: "/gallery/2.jpg"
@@ -70,6 +71,15 @@ export async function getStaticProps() {
                 },
                 {
                     src: "/gallery/20.jpg"
+                },
+                {
+                    src: ''
+                },
+                {
+                    src: '',
+                },
+                {
+                    src: "/gallery/21.jpeg"
                 }
             ]
         }

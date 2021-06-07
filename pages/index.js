@@ -4,9 +4,8 @@ import PhotoViewer from '@components/PhotoViewer'
 
 export default function Home() {
     return (
-        <div>
-            <Nav />
-            <Hero />
+        <div className="relative">
+            <Hero className="relative z-0" />
             <PhotoViewer />
         </div>
     )

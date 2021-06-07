@@ -5,9 +5,9 @@ import Image from 'next/image'
 
 const Hero = () => {
     return (
-        <div className="h-screen relative">
+        <div className="h-screen relative z-0">
             <div className="w-3/4 absolute right-0 bottom-0 lg:w-1/2 lg:-bottom-1/4 z-0 opacity-25">
-                <Image src='/bangalore-min.png' layout='fill' objectFit='contain' />
+                <img src='/bangalore-min.png' />
             </div>
             <div className="h-full w-screen flex flex-col justify-center items-center z-10">
                 <motion.div
