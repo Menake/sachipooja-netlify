@@ -1,29 +1,29 @@
-import { useRef } from 'react'
 import {
     motion,
     useTransform,
     useViewportScroll,
 } from 'framer-motion'
 import React from 'react'
+import { useInView } from 'react-intersection-observer'
+import useIsMobile from '../hooks/useIsMobile'
 
-const ParallaxBox = props => {
+const ParallaxBox = ({ offsetFraction = -0.05, ...remainingProps }) => {
     const { scrollY } = useViewportScroll()
+    const isMobile = useIsMobile()
 
-    const ref = useRef
+    const [contentRef, inView] = useInView({
+        triggerOnce: true
+    });
 
     const transformScrollToOffset = (scrollYValue) => {
-        const element = ref.current
+        if (!inView || isMobile) return 0
 
-        if (!element) return 0
-
-        // if (element.offsetTop !== 0) return 0
-
-        return scrollYValue * -0.1
+        return scrollYValue * offsetFraction
     }
 
     const y = useTransform(scrollY, transformScrollToOffset)
 
-    return <motion.div ref={ref} {...props} style={{ y }}></motion.div>
+    return <motion.div ref={contentRef} {...remainingProps} style={{ y }}></motion.div>
 }
 
 export default ParallaxBox

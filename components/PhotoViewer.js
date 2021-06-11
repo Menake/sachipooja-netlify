@@ -1,20 +1,17 @@
 import React from 'react'
-import Image from 'next/image'
 
-import { motion } from 'framer-motion'
-
-// import div from '@components/div'
 import InviteMessage from '@components/InviteMessage'
 import FadeText from '@components/FadeText'
 import Nav from './Nav'
+import ParallaxBox from '@components/ParallaxBox'
 
 const PhotoViewer = () => {
     const thisIsUsText = [
         'A shared love for dogs, cats & all things furry',
         'Can\'t live without Indian & Sri Lankan food',
         'Self-proclaimed photographers and food critics',
-        'Cookies, lemon lime bitters & fries',
-        'Obsessed with our family and loved ones',
+        'Cookies, lemon lime bitters & fries ',
+        'Obsessed with our family and loved ones'
     ]
 
     return (
@@ -24,7 +21,7 @@ const PhotoViewer = () => {
             <div className="lg:h-96"></div>
             <div className="relative flex flex-col w-screen">
                 <div className="mt-7 p-10 absolute lg:mt-0 lg:p-0 lg:w-1/4 lg:right-1/5 lg:left-auto">
-                    <InviteMessage className="p-10 w-full z-10 mb-20" />
+                    <InviteMessage className="w-full z-10 mb-20" />
                 </div>
                 <div className="h-96 lg:h-0"></div>
                 <div className="relative w-full sm:h-screen">
@@ -38,7 +35,7 @@ const PhotoViewer = () => {
                         </FadeText>
                     </div>
                     <div className="h-28 sm:h-0"></div>
-                    <motion.div className="w-full h-full px-10 relative sm:absolute sm:w-3/4 sm:right-1/20 sm:top-1/10 lg:w-1/2 lg:right-1/10 lg:top-1/2">
+                    <ParallaxBox offsetFraction={-0.08} className="w-full h-full px-10 relative sm:absolute sm:w-3/4 sm:right-1/20 sm:top-1/10 lg:w-1/2 lg:right-1/10 lg:top-1/2">
                         <img src='/home-page/engagement-horizontal.jpg' />
                         <FadeText
                             className="italic text-sm text-primary sm:float-right"
@@ -46,12 +43,12 @@ const PhotoViewer = () => {
                         >
                             A couple of hours after being engaged
                         </FadeText>
-                    </motion.div>
+                    </ParallaxBox>
                 </div>
                 <div className="h-96"></div>
                 <div className="relative sm:h-screen w-full z-10">
                     <div className="h-full w-full px-10 sm:absolute sm:left-1/20 sm:w-1/2 md:left-1/10 z-10 lg:w-2/5">
-                        <motion.div className="md:p-0">
+                        <div className="md:p-0">
                             <img src='/home-page/first-wedding.jpg' layout="fill" />
                             <FadeText
                                 className="italic text-sm text-primary"
@@ -59,17 +56,17 @@ const PhotoViewer = () => {
                             >
                                 01.20 1 year ago at our first wedding together
                             </FadeText>
-                        </motion.div>
+                        </div>
                     </div>
                     <FadeText className="absolute px-10 -top-64 lg:mt-0 lg:p-0 lg:w-1/4 lg:right-1/5 lg:left-auto lg:top-1/10">
-                        <div className="md:mt-7 p-10 w-full">
-                            <h2 className="text-2xl md:text-4xl text-secondary">
+                        <div className="md:mt-7 w-full">
+                            <h2 className="text-2xl md:text-4xl text-secondary mb-5">
                                 This Is Us
                             </h2>
                             {thisIsUsText.map((text, index) => (
                                 <FadeText
                                     key={index}
-                                    className="italic"
+                                    className="italic text-sm"
                                     delay={index++}
                                     duration={1}
                                 >
@@ -79,7 +76,7 @@ const PhotoViewer = () => {
                         </div>
                     </FadeText>
                     <div className="h-48 sm:h-0"></div>
-                    <motion.div className="w-full px-10 relative bottom-20 sm:absolute sm:w-1/2 sm:right-1/5 sm:top-1/2 lg:bottom-0 lg:right-1/10">
+                    <ParallaxBox className="w-full h-full px-10 relative bottom-20 sm:absolute sm:w-1/2 sm:right-1/5 sm:top-1/2 lg:bottom-0 lg:right-1/10">
                         <img src='/home-page/milo.jpg' layout="fill" />
                         <FadeText
                             className="italic text-sm text-primary sm:float-right"
@@ -87,7 +84,7 @@ const PhotoViewer = () => {
                         >
                             Milo's guest appearance on the day
                         </FadeText>
-                    </motion.div>
+                    </ParallaxBox>
                 </div>
             </div>
             <div className="relative ">

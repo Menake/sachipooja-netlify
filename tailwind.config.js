@@ -8,8 +8,8 @@ module.exports = {
         },
         extend: {
             textColor: {
-                'primary': '#112700',
-                'secondary': '#A9935A'
+                primary: '#112700',
+                secondary: '#A9935A'
             },
             inset: {
                 '1/20': '5%',
