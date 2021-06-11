@@ -19,13 +19,13 @@ const PhotoViewer = () => {
             <Nav className="fixed inset-y-0 left-5 flex flex-col h-screen justify-center transform -rotate-90 w-10 z-10" />
 
             <div className="lg:h-96"></div>
-            <div className="relative flex flex-col w-screen">
+            <div className="relative flex flex-col w-screen mb-32">
                 <div className="mt-7 p-10 absolute lg:mt-0 lg:p-0 lg:w-1/4 lg:right-1/5 lg:left-auto">
                     <InviteMessage className="w-full z-10 mb-20" />
                 </div>
                 <div className="h-96 lg:h-0"></div>
                 <div className="relative w-full sm:h-screen">
-                    <div className="h-full w-full px-10 relative sm:absolute sm:left-1/20 sm:w-1/2 z-10 lg:w-2/5 lg:left-1/10">
+                    <div className="w-full px-10 relative sm:absolute sm:left-1/20 sm:w-1/2 z-10 lg:w-2/5 lg:left-1/10">
                         <img src='/home-page/engagement-vertical.jpg' />
                         <FadeText
                             className="italic sm:w-1/2 text-sm text-primary"
@@ -35,7 +35,7 @@ const PhotoViewer = () => {
                         </FadeText>
                     </div>
                     <div className="h-28 sm:h-0"></div>
-                    <ParallaxBox offsetFraction={-0.08} className="w-full h-full px-10 relative sm:absolute sm:w-3/4 sm:right-1/20 sm:top-1/10 lg:w-1/2 lg:right-1/10 lg:top-1/2">
+                    <ParallaxBox offsetFraction={-0.08} className="w-full px-10 relative sm:absolute sm:w-3/4 sm:right-1/20 sm:top-1/10 lg:w-1/2 lg:right-1/10 lg:top-1/2">
                         <img src='/home-page/engagement-horizontal.jpg' />
                         <FadeText
                             className="italic text-sm text-primary sm:float-right"
@@ -47,7 +47,7 @@ const PhotoViewer = () => {
                 </div>
                 <div className="h-96"></div>
                 <div className="relative sm:h-screen w-full z-10">
-                    <div className="h-full w-full px-10 sm:absolute sm:left-1/20 sm:w-1/2 md:left-1/10 z-10 lg:w-2/5">
+                    <div className="w-full px-10 sm:absolute sm:left-1/20 sm:w-1/2 md:left-1/10 z-10 lg:w-2/5">
                         <div className="md:p-0">
                             <img src='/home-page/first-wedding.jpg' layout="fill" />
                             <FadeText
@@ -76,7 +76,7 @@ const PhotoViewer = () => {
                         </div>
                     </FadeText>
                     <div className="h-48 sm:h-0"></div>
-                    <ParallaxBox className="w-full h-full px-10 relative bottom-20 sm:absolute sm:w-1/2 sm:right-1/5 sm:top-1/2 lg:bottom-0 lg:right-1/10">
+                    <ParallaxBox className="w-full px-10 relative bottom-20 sm:absolute sm:w-1/2 sm:right-1/5 sm:top-1/2 lg:bottom-0 lg:right-1/10">
                         <img src='/home-page/milo.jpg' layout="fill" />
                         <FadeText
                             className="italic text-sm text-primary sm:float-right"
