@@ -7,10 +7,19 @@ module.exports = {
             center: true
         },
         extend: {
+            colors: {
+                primary: '#112700',
+                secondary: '#A9935A'
+            },
             textColor: {
                 primary: '#112700',
                 secondary: '#A9935A'
             },
+            backgroundColor: theme => ({
+                ...theme('colors'),
+                primary: '#112700',
+                secondary: '#A9935A'
+            }),
             inset: {
                 '1/20': '5%',
                 '1/10': '10%',
