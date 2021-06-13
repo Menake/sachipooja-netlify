@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import receptionGuests from './receptionGuests'
-import ceremonyGuests from './ceremonyGuests'
+import receptionGuests from '../data/receptionGuests'
+import ceremonyGuests from '../data/ceremonyGuests'
 import { motion, AnimatePresence } from "framer-motion"
 import DateCard from '@components/DateCard'
 
