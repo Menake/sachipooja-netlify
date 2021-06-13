@@ -39,7 +39,7 @@ const Gallery = ({ ceremonyGuests, receptionGuests }) => {
                             exit={{ y: '-100%' }}
                             transition={{ duration: 1 }}
                         >
-                            <img src="/kea.png" className="w-full absolute z-0 obect-fll" />
+                            {/* <img src="/kea.png" className="w-full absolute z-0 object-fll" /> */}
                             <div className="relative z-0 w-full h-full">
                                 <div className="flex flex-row justify-center">
                                     <h1 className="text-5xl text-secondary font-semibold mt-20 h-1/5">Enter your name to see the dates</h1>
