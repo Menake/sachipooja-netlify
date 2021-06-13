@@ -8,9 +8,9 @@ import DateCard from '@components/DateCard'
 const Gallery = ({ ceremonyGuests, receptionGuests }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [showCeremony, setShowCeremony] = useState(true);
-    const [showReception, setShowReception] = useState(true);
-    const [showHero, setShowHero] = useState(false);
+    const [showCeremony, setShowCeremony] = useState(false);
+    const [showReception, setShowReception] = useState(false);
+    const [showHero, setShowHero] = useState(true);
 
     const formSubmitted = (e) => {
         const name = `${firstName} ${lastName}`
@@ -34,31 +34,30 @@ const Gallery = ({ ceremonyGuests, receptionGuests }) => {
                 {
                     showHero && (
                         <motion.div
-                            className="h-full w-full bg-primary text-white"
+                            className="h-screen w-full bg-cream text-white"
                             initial={{ y: 0 }}
                             exit={{ y: '-100%' }}
                             transition={{ duration: 1 }}
                         >
-                            {/* <img src="/kea.png" className="w-full absolute z-0 object-fll" /> */}
+                            <img src="/kea.png" className="w-full md:w-1/2 lg:w-1/3 absolute bottom-0 z-0 object-fll" />
                             <div className="relative z-0 w-full h-full">
                                 <div className="flex flex-row justify-center">
                                     <h1 className="text-5xl text-secondary font-semibold mt-20 h-1/5">Enter your name to see the dates</h1>
                                 </div>
                                 <div className="flex flex-col justify-center h-4/5">
                                     <form onSubmit={formSubmitted} className="text-lg">
-                                        <label className="text-white"></label>
-                                        <div className="w-full flex flex-row justify-center h-12">
+                                        <div className="w-full flex flex-col md:flex-row justify-center h-12 px-10">
                                             <input
                                                 type="text"
                                                 name="name"
-                                                className="bg-transparent border-b-2 border-secondary w-1/4 mr-20 placeholder-white outline-none focus:ring-secondary"
+                                                className="bg-transparent border-b-2 border-secondary w-full mr-20 placeholder-primary text-primary outline-none focus:ring-secondary"
                                                 placeholder="First Name"
                                                 value={firstName}
                                                 onChange={(e) => setFirstName(e.target.value)}></input>
                                             <input
                                                 type="text"
                                                 name="name"
-                                                className="bg-transparent border-b-2 border-secondary w-1/4 mr-20 placeholder-white outline-none focus:ring-secondary"
+                                                className="bg-transparent border-b-2 border-secondary w-full md:w-1/5 mr-20 placeholder-primary text-primary outline-none focus:ring-secondary"
                                                 placeholder="Last Name"
                                                 value={lastName}
                                                 onChange={(e) => setLastName(e.target.value)}></input>
