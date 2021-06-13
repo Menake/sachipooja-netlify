@@ -8,9 +8,9 @@ import DateCard from '@components/DateCard'
 const Gallery = ({ ceremonyGuests, receptionGuests }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [showCeremony, setShowCeremony] = useState(false);
-    const [showReception, setShowReception] = useState(false);
-    const [showHero, setShowHero] = useState(true);
+    const [showCeremony, setShowCeremony] = useState(true);
+    const [showReception, setShowReception] = useState(true);
+    const [showHero, setShowHero] = useState(false);
 
     const formSubmitted = (e) => {
         const name = `${firstName} ${lastName}`
@@ -29,7 +29,7 @@ const Gallery = ({ ceremonyGuests, receptionGuests }) => {
     }
 
     return (
-        <div className="h-screen w-screen flex flex-col items-center">
+        <div className="w-screen flex flex-col justify-center items-center lg:h-screen">
             <AnimatePresence>
                 {
                     showHero && (
@@ -72,32 +72,38 @@ const Gallery = ({ ceremonyGuests, receptionGuests }) => {
                 }
             </AnimatePresence>
 
-            {!showHero && (
-                <AnimatePresence>
-                    <motion.div className="flex flex-col md:flex-row w-full h-full justify-evenly items-center"
+            <AnimatePresence>
+                {!showHero && (
+                    <motion.div
+                        className="flex flex-col mt-40 py-5 items-center justify-center lg:flex-row lg:h-full"
                         initial={{ y: "100%" }}
                         animate={{ y: 0 }}
                         transition={{ duration: 1 }}>
-                        {showCeremony && (<DateCard
-                            event="Ceremony"
-                            src="/ceremony.jpg"
-                            date="21st November"
-                            location="Shree Swaminarayan Temple Auckland 10/12 Wentworth Avenue, Papatoetoe, Auckland, 2025"
-                            name={getFullName()}
-                            numberOfGuests={3}>
-                            <div>
-                                We invite you to eat, sing, laugh and dance with us at our traditional Indian and Sri Lankan wedding ceremonies on this auspicious day.
+                        {showCeremony && (
+                            <DateCard
+                                containerClass="mb-20 lg:mb-0"
+                                event="Ceremony"
+                                src="/ceremony.jpg"
+                                date="21st November"
+                                location="Shree Swaminarayan Temple Auckland 10/12 Wentworth Avenue, Papatoetoe, Auckland, 2025"
+                                name={getFullName()}
+                                numberOfGuests={3}>
+                                <div>
+                                    We invite you to eat, sing, laugh and dance with us at our traditional Indian and Sri Lankan wedding ceremonies on this auspicious day.
                             </div>
-                        </DateCard>)}
-                        {showReception && (<DateCard
-                            event="Reception"
-                            src="/reception.jpg"
-                            date="27th November"
-                            location="Turanga Creek"
-                            name={getFullName()}
-                            numberOfGuests={3}>
-                            Join us at a light hearted and fun reception to celebrate our love. Dancing and laughing your hearts out with us is compulsory.
-                        </DateCard>)}
+                            </DateCard>
+                        )}
+                        {showReception && (
+                            <DateCard
+                                event="Reception"
+                                src="/reception.jpg"
+                                date="27th November"
+                                location="Turanga Creek"
+                                name={getFullName()}
+                                numberOfGuests={3}>
+                                Join us at a light hearted and fun reception to celebrate our love. Dancing and laughing your hearts out with us is compulsory.
+                            </DateCard>
+                        )}
                         {
                             (!showCeremony && !showReception) && (
                                 <div>
@@ -106,8 +112,8 @@ const Gallery = ({ ceremonyGuests, receptionGuests }) => {
                             )
                         }
                     </motion.div>
-                </AnimatePresence>
-            )}
+                )}
+            </AnimatePresence>
         </div>
     )
 }
