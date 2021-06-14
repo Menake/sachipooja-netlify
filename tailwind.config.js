@@ -18,7 +18,8 @@ module.exports = {
             backgroundColor: theme => ({
                 ...theme('colors'),
                 primary: '#112700',
-                secondary: '#A9935A'
+                secondary: '#A9935A',
+                cream: '#FCFBF9'
             }),
             inset: {
                 '1/20': '5%',
