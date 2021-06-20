@@ -1,21 +1,11 @@
 import { motion } from 'framer-motion'
 
-const CollapsedCard = ({ children, onClick, className }) => {
+import CardPhoto from '@components/cards/CardPhoto'
+
+const CollapsedCard = ({ src, event, onClick, objectPosition }) => {
     return (
-        <motion.div
-            transition={{
-                type: "tween",
-                ease: "linear",
-                duration: 0.4
-            }}
-            whileHover={{
-                scale: 1.05,
-                cursor: "pointer"
-            }}
-            layoutId="expandable-card"
-            className={`flex flex-col relative shadow-md rounded mx-4 lg:mx-20 ${className}`}
-            onClick={onClick}>
-            {children}
+        <motion.div className="mx-5 lg:w-1/3 z-10">
+            <CardPhoto src={src} heading={event} onClick={onClick} className="rounded-lg" objectPosition={objectPosition}></CardPhoto>
         </motion.div>
     )
 }

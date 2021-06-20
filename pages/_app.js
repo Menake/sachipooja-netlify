@@ -1,4 +1,3 @@
-import Nav from '@components/Nav'
 import 'tailwindcss/tailwind.css'
 
 function Application({ Component, pageProps }) {

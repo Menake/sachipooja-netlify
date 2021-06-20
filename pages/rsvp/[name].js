@@ -1,7 +1,9 @@
 import React from 'react'
 
 import { db } from "../../firebase";
+import Card from '@components/cards/Card';
 import DateCard from '@components/DateCard';
+import { AnimateSharedLayout } from 'framer-motion';
 
 export const getServerSideProps = async (context) => {
     const guestName = context.params.name;
@@ -35,26 +37,30 @@ export const getServerSideProps = async (context) => {
 }
 
 const GuestRsvp = ({ guest }) => {
-    const { name, numberOfGuests, events = [], canRsvp, addressedTo } = guest;
+    const { name, numberOfGuests, events = [], canRsvp } = guest;
 
     return events.length > 0
-        ? events.map(event => {
-            return (
-                <DateCard
-                    key={event.id}
-                    containerClass="mb-20 lg:mb-0"
-                    event={event.name}
-                    src={event.imageSrc}
-                    date={event.date}
-                    location={event.location}
-                    name={name}
-                    numberOfGuests={numberOfGuests}>
-                    <div>
-                        {event.blurb}
-                    </div>
-                </DateCard>
-            )
-        })
+        ? (
+            <div className="h-screen w-screen">
+                <div className="relative flex flex-col sm:flex-row h-full w-full justify-evenly items-center">
+
+                    {events.map(event => (
+                        <AnimateSharedLayout key={event.id}>
+                            <Card
+                                blurb={event.blurb}
+                                event={event.name}
+                                src={event.imageSrc}
+                                date={event.date}
+                                location={event.location}
+                                objectPosition={event.imagePosition}
+                                name={name}
+                                canRsvp={canRsvp}
+                                numberOfGuests={numberOfGuests} />
+                        </AnimateSharedLayout>
+                    ))}
+                </div>
+            </div>
+        )
         : (<div className="h-screen w-screen flex flex-col justify-center items-center">
             <h1>Sorry you're not on the guest list</h1>
         </div>)

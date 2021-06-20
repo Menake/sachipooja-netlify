@@ -1,12 +1,18 @@
-const CardPhoto = ({ src, heading, className, onClick }) => {
+import { motion } from "framer-motion"
+
+const CardPhoto = ({ src, heading, className, onClick, objectPosition = "object-top" }) => {
+    console.log(objectPosition);
+
     return (
-        <div className={`mx-10 mt-5 flex flex-row relative justify-center items-center rounded shadow-md -top-10 cursor-pointer ${className}`} onClick={onClick}>
-            <img className="relative z-0 h-full object-cover" src={src} />
-            <div
-                className="z-20 absolute w-full h-full bg-black opacity-30 mx-10 p-2">
+        <motion.div
+            layoutId="expandable-card"
+            className={`flex flex-row relative justify-center items-center overflow-hidden cursor-pointer ${className}`}
+            onClick={onClick}>
+            <img src={src} className={`h-full w-full object-cover ${objectPosition}`} />
+            <div className="absolute w-full h-full bg-black opacity-30">
             </div>
-            <h1 className="m-auto absolute z-30 text-4xl font-bold text-white">{heading}</h1>
-        </div>
+            <h1 className="absolute text-4xl font-bold text-white">{heading}</h1>
+        </motion.div>
     )
 }
 
