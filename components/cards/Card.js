@@ -1,21 +1,29 @@
 import React, { useState } from 'react'
 
-import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion"
+import { AnimateSharedLayout, motion } from "framer-motion"
 // import CardPhoto from '@components/cards/CardPhoto';
 import CollapsedCard from '@components/cards/CollapsedCard';
 import ExpandedCard from '@components/cards/ExpandedCard';
 
-const Card = ({ canRsvp, event, src, date, blurb, location, numberOfGuests, name, objectPosition }) => {
+const Card = ({ canRsvp, event, id, numberOfGuests, name }) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const collapsedProps = { src, event, objectPosition }
-    const expandedProps = { blurb, canRsvp, date, event, location, name, numberOfGuests, objectPosition, src }
+    const { blurb, name: eventName, imageSrc: src, date, location, imagePosition: objectPosition, guestEventId, hasRsvpd } = event;
+
+
+    const collapsedProps = { src, eventName, objectPosition }
+    const expandedProps = { blurb, canRsvp, date, eventName, guestEventId, hasRsvpd, id, location, name, numberOfGuests, objectPosition, src }
+
+    const onFormSubmit = () => {
+        setIsOpen(false);
+        event.hasRsvpd = true
+    }
 
     return (
         <AnimateSharedLayout type="crossfade">
             {
                 isOpen
-                    ? <ExpandedCard {...expandedProps} onClick={() => setIsOpen(false)} />
+                    ? <ExpandedCard {...expandedProps} onClick={() => setIsOpen(false)} onFormSubmit={onFormSubmit} />
                     : <CollapsedCard {...collapsedProps} onClick={() => setIsOpen(true)} />
             }
         </AnimateSharedLayout>

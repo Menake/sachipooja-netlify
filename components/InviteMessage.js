@@ -4,6 +4,7 @@ import { useAnimation } from 'framer-motion'
 import { motion } from 'framer-motion'
 
 import React from 'react'
+import Link from 'next/link'
 
 const InviteMessage = props => {
     const controls = useAnimation()
@@ -41,8 +42,10 @@ const InviteMessage = props => {
                     present to celebrate the start of our new chapter together
                 </p>
             </div>
-            <div className="pt-8">
-                <button className="text-secondary">RSVP Here</button>
+            <div className="pt-8 bg-s">
+                <Link href="/rsvp" >
+                    <div className="p-2 text-center rounded-md font-semibold bg-secondary text-white cursor-pointer">RSVP Here</div>
+                </Link>
             </div>
         </motion.div>
     )

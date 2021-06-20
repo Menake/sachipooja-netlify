@@ -16,12 +16,12 @@ const PhotoViewer = () => {
 
     return (
         <div>
-            <Nav className="fixed inset-y-0 left-5 flex flex-col h-screen justify-center transform -rotate-90 w-10 z-10" />
+            <Nav className="fixed inset-y-0 left-5 flex flex-col h-screen justify-center transform -rotate-90 w-10 z-30" />
 
             <div className="lg:h-96"></div>
             <div className="relative flex flex-col w-screen mb-32">
-                <div className="mt-7 p-10 absolute lg:mt-0 lg:p-0 lg:w-1/4 lg:right-1/5 lg:left-auto">
-                    <InviteMessage className="w-full z-10 mb-20" />
+                <div className="mt-7 p-10 absolute z-50 lg:mt-0 lg:p-0 lg:w-1/4 lg:right-1/5 lg:left-auto">
+                    <InviteMessage className="w-full mb-20" />
                 </div>
                 <div className="h-96 lg:h-0"></div>
                 <div className="relative w-full sm:h-screen">

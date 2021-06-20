@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React, { useState } from "react"
 
+import { motion } from 'framer-motion'
+
 export default function Masonry({ gutter = 0, columnsCount = 3, images }) {
     const [selectedImage, setSelectedImage] = useState(null);
 
@@ -16,33 +18,36 @@ export default function Masonry({ gutter = 0, columnsCount = 3, images }) {
 
     const renderColumn = (column) => {
         return column.map((item, i) => (
-            <div key={i} style={{ marginTop: i > 0 ? gutter : undefined }}>
-                <img {...item} className="filter grayscale-85 hover:grayscale-0 cursor-pointer"
+            <motion.div key={i} style={{ marginTop: i > 0 ? gutter : undefined }}>
+                <img {...item} className="filter grayscale-85 hover:grayscale-0 cursor-pointer object-fit object-center"
                     onClick={() => setSelectedImage(item)} />
-            </div>
+            </motion.div>
         ))
     }
 
-    return selectedImage ?
-        (
-            <div className="relative h-screen bg-black flex flex-row justify-center">
+    const ExpandedImage = () => {
+        return (
+            <motion.div className="relative h-screen bg-black flex flex-row justify-center">
                 <div>
                     <img {...selectedImage} className="h-full z-0"></img>
-                    <div>{selectedImage.caption}</div>
                 </div>
                 <div className="fixed bottom-5 rounded-full h-10 w-10 shadow-2xl drop-shadow-2xl cursor-pointer flex items-center justify-center bg-white rounded-full">
                     <div onClick={() => setSelectedImage(null)}>
                         X
                     </div>
                 </div>
-            </div>
+            </motion.div>
         )
+    }
+
+    return selectedImage ?
+        <ExpandedImage />
         : (
             <div className="flex flex-row justify-center items-stretch box-border w-full"
             >
                 {getColumns().map((column, i) => (
                     <div key={i} className="flex-1 flex-col justify-start items-stretch"
-                        style={{ marginLeft: i > 0 ? gutter : undefined }}>
+                        style={{ marginLeft: i > 0 ? gutter : "" }}>
                         {renderColumn(column)}
                     </div>
                 ))}

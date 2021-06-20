@@ -8,8 +8,6 @@ const firebaseConfig = {
     projectId: process.env.FIREBASE_PROJECT_ID
 };
 
-console.log(firebaseConfig);
-
 // Initialize Firebase
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);

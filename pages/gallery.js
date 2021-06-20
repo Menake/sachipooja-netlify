@@ -16,7 +16,6 @@ export async function getStaticProps() {
             images: [
                 {
                     src: "/gallery/1.jpg",
-                    caption: "a test caption"
                 },
                 {
                     src: "/gallery/2.jpg"
