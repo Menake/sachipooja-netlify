@@ -7,14 +7,20 @@ import { AnimateSharedLayout } from 'framer-motion';
 export const getServerSideProps = async (context) => {
     const guestName = context.params.name;
 
+    console.log("Guest Name: ", guestName)
+
     const snapshot = await db.collection('guests')
         .where('name', '==', guestName)
         .limit(1)
         .get()
 
+    console.log("Snapshot: ", snapshot)
+
     // find the guests
     const guests = snapshot.docs.map(doc => doc.data())
     const guest = guests[0];
+
+    console.log("Guests: ", guests)
 
     if (!guest) return { props: { guest: {} } }
 
@@ -27,6 +33,8 @@ export const getServerSideProps = async (context) => {
             id: doc.id,
             ...doc.data()
         }));
+
+    console.log("Events: ", guestEvents)
 
     guest.events = guestEvents;
 
