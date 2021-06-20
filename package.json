@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export"
+    "export": "next export",
+    "start": "next start"
   },
   "dependencies": {
     "firebase": "^8.6.7",

@@ -2,7 +2,6 @@ import React from 'react'
 
 import { db } from "../../firebase";
 import Card from '@components/cards/Card';
-import DateCard from '@components/DateCard';
 import { AnimateSharedLayout } from 'framer-motion';
 
 export const getServerSideProps = async (context) => {

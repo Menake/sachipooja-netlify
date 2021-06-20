@@ -1,8 +1,6 @@
 import { motion } from "framer-motion"
 
 const CardPhoto = ({ src, heading, className, onClick, objectPosition = "object-top" }) => {
-    console.log(objectPosition);
-
     return (
         <motion.div
             layoutId="expandable-card"
