@@ -55,7 +55,7 @@ const PhotoViewer = () => {
                             </FadeText>
                         </div>
                     </div>
-                    <FadeText className="absolute px-10 -top-72 lg:mt-0 lg:p-0 lg:w-1/4 lg:right-1/5 lg:left-auto lg:top-1/20">
+                    <FadeText className="absolute px-10 -top-72 lg:mt-0 lg:p-0 lg:w-1/4 lg:right-1/5 lg:left-auto lg:-top-20">
                         <div className="w-full">
                             <h2 className="text-2xl md:text-4xl text-secondary mb-5">
                                 This Is Us
@@ -63,7 +63,7 @@ const PhotoViewer = () => {
                             {thisIsUsText.map((text, index) => (
                                 <FadeText
                                     key={index}
-                                    className="italic text-sm"
+                                    className="italic text-sm lg:text-base lg:not-italic"
                                     delay={index++}
                                     duration={1}
                                 >
