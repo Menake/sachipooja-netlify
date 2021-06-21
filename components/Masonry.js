@@ -29,7 +29,7 @@ export default function Masonry({ gutter = 0, columnsCount = 3, images }) {
         return (
             <motion.div className="relative h-screen bg-black flex flex-row justify-center">
                 <div>
-                    <img {...selectedImage} className="h-full z-0"></img>
+                    <img {...selectedImage} className="h-full z-0 object-contain object-center"></img>
                 </div>
                 <div className="fixed bottom-5 rounded-full h-10 w-10 shadow-2xl drop-shadow-2xl cursor-pointer flex items-center justify-center bg-white rounded-full">
                     <div onClick={() => setSelectedImage(null)}>

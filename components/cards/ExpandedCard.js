@@ -82,10 +82,13 @@ const ExpandedCard = ({ canRsvp, eventName, src, date, guestEventId, hasRsvpd, i
                             <div className="mt-5 xl:mt-10 2xl:text-lg">
                                 {blurb}
                             </div>
-                            {showRsvpForm ? <RsvpForm />
-                                : (
-                                    <div className="absolute bottom-10 w-full italic">You have already Rsvpd for this event. If you think this is an error please get in touch with Sachintha or Pooja</div>
-                                )}
+                            {
+                                showRsvpForm
+                                    ? <RsvpForm />
+                                    : <div className="absolute bottom-10 w-full italic">
+                                        You have already Rsvpd for this event. If you think this is an error the number of guests attending has changed please get in touch with Sachintha or Pooja.
+                                    </div>
+                            }
                         </div>
                     </motion.div>
                 </div>

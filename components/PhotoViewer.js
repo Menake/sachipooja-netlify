@@ -1,8 +1,7 @@
 import React from 'react'
-
+import Link from "next/link"
 import InviteMessage from '@components/InviteMessage'
 import FadeText from '@components/FadeText'
-import Nav from './Nav'
 import ParallaxBox from '@components/ParallaxBox'
 
 const PhotoViewer = () => {
@@ -16,8 +15,6 @@ const PhotoViewer = () => {
 
     return (
         <div>
-            <Nav className="fixed inset-y-0 left-5 flex flex-col h-screen justify-center transform -rotate-90 w-10 z-30" />
-
             <div className="lg:h-96"></div>
             <div className="relative flex flex-col w-screen mb-32">
                 <div className="mt-7 p-10 absolute z-50 lg:mt-0 lg:p-0 lg:w-1/4 lg:right-1/5 lg:left-auto">
@@ -58,8 +55,8 @@ const PhotoViewer = () => {
                             </FadeText>
                         </div>
                     </div>
-                    <FadeText className="absolute px-10 -top-64 lg:mt-0 lg:p-0 lg:w-1/4 lg:right-1/5 lg:left-auto lg:top-1/10">
-                        <div className="md:mt-7 w-full">
+                    <FadeText className="absolute px-10 -top-72 lg:mt-0 lg:p-0 lg:w-1/4 lg:right-1/5 lg:left-auto lg:top-1/20">
+                        <div className="w-full">
                             <h2 className="text-2xl md:text-4xl text-secondary mb-5">
                                 This Is Us
                             </h2>
@@ -73,6 +70,11 @@ const PhotoViewer = () => {
                                     {text}
                                 </FadeText>
                             ))}
+                            <div className='text-center font-bold text-white bg-primary rounded-md mt-7 p-2 cursor-pointer'>
+                                <Link href='/gallery'>
+                                    Share Some of Our Moments
+                                </Link>
+                            </div>
                         </div>
                     </FadeText>
                     <div className="h-48 sm:h-0"></div>
