@@ -86,7 +86,7 @@ const ExpandedCard = ({ canRsvp, eventName, src, date, guestEventId, hasRsvpd, i
                                 showRsvpForm
                                     ? <RsvpForm />
                                     : <div className="absolute bottom-10 w-full italic">
-                                        You have already Rsvpd for this event. If you think this is an error the number of guests attending has changed please get in touch with Sachintha or Pooja.
+                                        You have already Rsvpd for this event. If you think this is an error or the number of guests attending has changed please get in touch with Sachintha or Pooja.
                                     </div>
                             }
                         </div>

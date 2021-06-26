@@ -16,9 +16,8 @@ const ParallaxBox = ({ offsetFraction = -0.05, ...remainingProps }) => {
     });
 
     const transformScrollToOffset = (scrollYValue) => {
-        if (!inView || isMobile) return 0
-
-        return scrollYValue * offsetFraction
+        if (inView && !isMobile) return scrollYValue * offsetFraction
+        return 0;
     }
 
     const y = useTransform(scrollY, transformScrollToOffset)

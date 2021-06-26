@@ -19,7 +19,7 @@ const Rsvp = () => {
     return (
         <div className="w-screen h-screen flex flex-col justify-center items-center overflow-hidden">
             <motion.div className="h-full w-full bg-cream text-primary">
-                <img src="/kea.png" className="w-full sm:w-3/4 md:w-3/5 lg:w-1/2 xl:w-2/5 2xl:w-1/3 absolute z-0 bottom-0 left-0" />
+                <img src="/kea.png" className="h-1/2 sm:h-2/3 absolute z-0 bottom-0 left-0 object-fit" />
                 <div className="absolute bottom-0 left-0 z-10 text-sm pl-5 pb-2">Kea by <a className="text-secondary" href="https://www.shutterstock.com/g/art_of_line">art of line</a></div>
                 <div className="relative z-0 w-full h-full">
                     <div className="w-full flex flex-col text-center justify-center px-8">
