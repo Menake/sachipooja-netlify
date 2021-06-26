@@ -31,6 +31,9 @@ module.exports = {
             },
             grayscale: {
                 85: '85%',
+            },
+            minHeight: {
+                '20': '60rem'
             }
         }
     },

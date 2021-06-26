@@ -65,7 +65,7 @@ const ExpandedCard = ({ canRsvp, eventName, src, date, guestEventId, hasRsvpd, i
     }
 
     return (
-        <motion.div className="h-screen w-screen absolute z-30 bg-white">
+        <motion.div className="h-screen w-screen absolute z-30 bg-white sm:min-h-20">
             <div className="h-full w-full">
                 <div className="absolute h-full sm:h-4/5 xl:h-5/6 w-full sm:w-4/5 2xl:w-1/2 sm:inset-y-1/20 sm:inset-x-1/10 2xl:inset-x-1/4 m-auto rounded-md">
                     <CardPhoto src={src} heading={eventName} className="h-1/3 lg:h-2/5 lg:rounded-t-lg" onClick={onClick} objectPosition={objectPosition} />
