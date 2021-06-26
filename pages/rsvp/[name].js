@@ -50,17 +50,18 @@ export const getServerSideProps = async (context) => {
 }
 
 const GuestRsvp = ({ guest }) => {
-    const { id, name, numberOfGuests, events = [], canRsvp } = guest;
+    const { addressedTo, id, name, numberOfGuests, events = [], canRsvp } = guest;
     return events.length > 0
         ? (
-            <div className="h-screen w-screen">
-                <div className="w-full h-1/20 absolute z-10">
+            <div className="h-screen w-screen absolute">
+                <div className="w-full h-1/20 z-10">
                     <Link href="/" >
                         <svg xmlns="http://www.w3.org/2000/svg" className="ml-5 mt-8 h-8 w-8 text-primary cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
                     </Link>
                 </div>
+                <div className="w-full text-center text-3xl mt-20 sm:absolute sm:top-40 sm:mt-0">Dear {addressedTo}</div>
                 <div className="relative flex flex-col sm:flex-row h-full w-full justify-evenly items-center">
                     {events.map(event => (
                         <AnimateSharedLayout key={event.id}>

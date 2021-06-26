@@ -33,14 +33,14 @@ const Rsvp = () => {
                             className="bg-transparent border-b-2 border-secondary w-3/4 lg:w-1/2 mb-10 placeholder-black placeholder-opacity-50 text-secondary outline-none focus:ring-secondary"
                             placeholder="First Name"
                             value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)}></input>
+                            onChange={(e) => setFirstName(e.target.value.replace(/\s+/g, '').toLowerCase())}></input>
                         <input
                             type="text"
                             name="name"
                             className="bg-transparent border-b-2 border-secondary w-3/4 lg:w-1/2 mb-10 placeholder-black placeholder-opacity-50 text-secondary outline-none focus:ring-secondary"
                             placeholder="Last Name"
                             value={lastName}
-                            onChange={(e) => setLastName(e.target.value)}></input>
+                            onChange={(e) => setLastName(e.target.value.replace(/\s+/g, '').toLowerCase())}></input>
                         <button type="submit" onClick={onSubmit} className="bg-secondary rounded-md text-white font-semibold text-center cursor-pointer w-3/4 lg:w-1/2 md:h-8" >See the Dates!</button>
                     </form>
                 </div>

@@ -30,7 +30,7 @@ const PhotoViewer = () => {
                         <InviteMessage className="w-full mb-20" />
                     </div>
 
-                    <div className="w-full relative sm:absolute sm:w-1/2 z-10 lg:w-1/2 z-20">
+                    <div className="w-full relative sm:absolute sm:w-1/2 z-10 lg:w-1/2">
                         <img src='/home-page/engagement-vertical.jpg' />
                         <FadeText
                             className="italic sm:w-1/2 text-sm text-primary"
@@ -41,7 +41,7 @@ const PhotoViewer = () => {
                     </div>
                     <div
                         offsetFraction={-0.08}
-                        className="w-full sm:absolute mt-20 right-0 sm:w-3/4 sm:top-1/2 lg:w-3/4 lg:top-1/3 z-10">
+                        className="w-full sm:absolute mt-20 right-0 sm:w-3/4 sm:top-1/2 lg:w-3/4 lg:top-1/3 z-0">
                         <img src='/home-page/engagement-horizontal.jpg' />
                         <FadeText
                             className="italic text-sm text-primary sm:float-right"
