@@ -61,7 +61,7 @@ const GuestRsvp = ({ guest }) => {
                         </svg>
                     </Link>
                 </div>
-                <div className="w-full text-center text-3xl mt-20 sm:absolute sm:top-40 sm:mt-0">Dear {addressedTo}</div>
+                <div className="w-full text-center text-3xl font-semibold mt-20 sm:absolute sm:text-4xl sm:top-40 sm:mt-0 text-secondary">Dear {addressedTo}</div>
                 <div className="relative flex flex-col sm:flex-row h-full w-full justify-evenly items-center">
                     {events.map(event => (
                         <AnimateSharedLayout key={event.id}>

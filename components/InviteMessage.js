@@ -38,8 +38,7 @@ const InviteMessage = props => {
                     The Invite
                 </h2>
                 <p>
-                    We think you're pretty special and we'd love to have you
-                    present to celebrate the start of our new chapter together
+                    We think you're pretty special and we'd love for you to join us as we celebrate the start of our new chapter together
                 </p>
             </div>
             <div className="pt-8 bg-s">
@@ -49,7 +48,6 @@ const InviteMessage = props => {
             </div>
         </motion.div>
     )
-    return null
 }
 
 export default InviteMessage
