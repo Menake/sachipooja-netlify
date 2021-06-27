@@ -12,48 +12,46 @@ const PhotoViewer = () => {
         'Obsessed with our family and loved ones'
     ]
 
-    const PhotoContainer = ({ children, className }) => {
-        return (
-            <div className={`relative w-4/5 mx-auto mb-6 sm:h-screen ${className ?? ''}`}>
-                {children}
-            </div>
-        )
-    }
+    const PhotoContainer = ({ children, className }) => (
+        <div className={`relative w-4/5 mx-auto mb-6 max-w-5xl ${className ?? ''}`}>
+            {children}
+        </div>
+    )
+
+    const Photo = ({ className, src, text, textClass }) => (
+        <div className={className}>
+            <img src={src} />
+            <FadeText
+                className={`italic sm:w-1/2 text-sm text-primary ${textClass ?? ""}`}
+                duration={1}
+            >
+                {text}
+            </FadeText>
+        </div>
+    );
 
     return (
         <div>
-            <div className="lg:h-96"></div>
-            <div className="relative flex flex-col w-screen mb-32">
+            <div className="relative flex flex-col w-screen mb-32 lg:mt-56">
                 <PhotoContainer>
-                    <div
-                        className="mt-7 z-50 w-full lg:absolute lg:mt-32 lg:p-0 lg:w-2/5 lg:right-0">
-                        <InviteMessage className="w-full mb-20" />
-                    </div>
+                    <InviteMessage className="w-full mb-20 mt-7 z-50 w-full xl:absolute xl:mt-10 xl:p-0 xl:w-2/5 xl:right-0" />
 
-                    <div className="w-full relative sm:absolute sm:w-1/2 z-10 lg:w-1/2">
-                        <img src='/home-page/engagement-vertical.jpg' />
-                        <FadeText
-                            className="italic sm:w-1/2 text-sm text-primary"
-                            duration={1}
-                        >
-                            01.21 Riverhead Villa, the day of the proposal
-                        </FadeText>
-                    </div>
-                    <div
-                        offsetFraction={-0.08}
-                        className="w-full sm:absolute mt-20 right-0 sm:w-3/4 sm:top-1/2 lg:w-3/4 lg:top-1/3 z-0">
-                        <img src='/home-page/engagement-horizontal.jpg' />
-                        <FadeText
-                            className="italic text-sm text-primary sm:float-right"
-                            duration={1}
-                        >
-                            A couple of hours after being engaged
-                        </FadeText>
-                    </div>
+                    <Photo
+                        className="w-full relative sm:w-1/2 z-10 lg:w-1/2 max-w-2xl"
+                        src="/home-page/engagement-vertical.jpg"
+                        text="01.21 Riverhead Villa, the day of the proposal" />
+
+                    <Photo
+                        className="w-full mt-20 right-0 sm:absolute sm:w-3/4 sm:top-1/2 lg:w-2/3 lg:top-1/2 xl:top-1/3 xl:w-2/3 z-0 max-w-3xl"
+                        src="/home-page/engagement-horizontal.jpg"
+                        text="A couple of hours after being engaged"
+                        textClass="sm:float-right sm:text-right" />
+
                 </PhotoContainer>
-                <div className="sm:h-48 2xl:h-96"></div>
-                <PhotoContainer className="z-10 mt-20">
-                    <FadeText className="w-full mb-20 sm:mb-28 lg:absolute lg:right-0 lg:w-2/5 lg:mb-0">
+
+
+                <PhotoContainer className="z-10 sm:mt-20 lg:mt-48">
+                    <FadeText className="w-full mb-20 mt-7 z-50 w-full xl:absolute xl:mt- xl:p-0 xl:w-2/5 xl:right-0" >
                         <div className="w-full">
                             <h2 className="text-2xl md:text-4xl text-secondary mb-5">
                                 This Is Us
@@ -76,31 +74,19 @@ const PhotoViewer = () => {
                         </div>
                     </FadeText>
 
-                    <div className="w-full mb-32 sm:absolute sm:w-1/2 z-10">
-                        <div className="md:p-0">
-                            <img src='/home-page/first-wedding.jpg' layout="fill" />
-                            <FadeText
-                                className="italic text-sm text-primary sm:w-1/2"
-                                duration={1}
-                            >
-                                01.20 1 year ago at our first wedding together
-                            </FadeText>
-                        </div>
-                    </div>
+                    <Photo
+                        className="w-full sm:w-1/2 relative z-10 max-w-2xl"
+                        src="/home-page/first-wedding.jpg"
+                        text="01.20 1 year ago at our first wedding together" />
 
-                    <div className="sm:h-48"></div>
-                    <div className="w-full mt-32 relative right-0 sm:mt-96 sm:absolute sm:w-3/4">
-                        <img src='/home-page/milo.jpg' layout="fill" />
-                        <FadeText
-                            className="italic text-sm text-primary sm:float-right"
-                            duration={1}
-                        >
-                            Milo's guest appearance on the day
-                        </FadeText>
-                    </div>
+                    <Photo
+                        className="w-full mt-20 z-0 right-0 sm:absolute sm:w-3/4 sm:top-1/2 lg:w-2/3 lg:mt-0 lg:top-1/2 xl:w-2/3 max-w-3xl"
+                        src="/home-page/milo.jpg"
+                        text="Milo's guest appearance on the day"
+                        textClass="sm:float-right sm:text-right" />
                 </PhotoContainer>
             </div>
-            <div className="absolute left-0 bottom-0 z-0 w-3/4 opacity-25">
+            <div className="absolute left-0 bottom-0 z-0 w-3/4 max-w-5xl opacity-25">
                 <img src="/galle.png" className="object-fit" />
             </div>
         </div>
