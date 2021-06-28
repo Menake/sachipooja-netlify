@@ -67,11 +67,11 @@ const PhotoViewer = () => {
                                 </FadeText>
                             ))}
                         </div>
-                        <div className='text-center font-bold text-white bg-primary rounded-md mt-7 p-2 cursor-pointer'>
-                            <Link href='/gallery'>
+                        <Link href='/gallery'>
+                            <div className='text-center font-bold text-white bg-primary rounded-md mt-7 p-2 cursor-pointer'>
                                 Share Some of Our Moments
-                            </Link>
-                        </div>
+                            </div>
+                        </Link>
                     </FadeText>
 
                     <Photo
