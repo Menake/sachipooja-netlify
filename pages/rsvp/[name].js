@@ -60,7 +60,7 @@ const HomeButton = () => (
 )
 
 const GuestRsvp = ({ guest }) => {
-    const { addressedTo, id, name, numberOfGuests, events = [], canRsvp } = guest;
+    const { addressedTo, id, name, numberOfGuests, events = [] } = guest;
     return events.length > 0
         ? (
             <div className="h-full w-full absolute">
@@ -75,16 +75,17 @@ const GuestRsvp = ({ guest }) => {
                                 id={id}
                                 event={event}
                                 name={name}
-                                canRsvp={canRsvp}
                                 numberOfGuests={numberOfGuests} />
                         </AnimateSharedLayout>
                     ))}
                 </div>
             </div>
         )
-        : (<div className="h-screen w-screen flex flex-col justify-center items-center">
-            <h1>Oops! Something went wrong, please get in touch with Pooja or Sachintha and we’ll help you get to the right place</h1>
-        </div>)
+        : (
+            <div className="h-screen w-screen flex flex-col justify-center items-center">
+                <h1>Oops! Something went wrong, please get in touch with Pooja or Sachintha and we’ll help you get to the right place</h1>
+            </div>
+        )
 }
 
 export default GuestRsvp

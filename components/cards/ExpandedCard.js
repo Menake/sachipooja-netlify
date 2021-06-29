@@ -3,11 +3,9 @@ import { useState } from 'react';
 
 import CardPhoto from '@components/cards/CardPhoto';
 
-const ExpandedCard = ({ canRsvp, eventName, src, date, guestEventId, hasRsvpd, id, blurb, location, numberOfGuests, name, objectPosition, onClick, onFormSubmit }) => {
+const ExpandedCard = ({ eventName, src, date, guestEventId, hasRsvpd, id, blurb, location, numberOfGuests, name, objectPosition, onClick, onFormSubmit }) => {
     const [selectedNumberOfGuests, setSelectedNumberOfGuests] = useState(0);
     const guestsArray = Array.from({ length: numberOfGuests }, (_, i) => i + 1);
-
-    const showRsvpForm = canRsvp && !hasRsvpd;
 
     const NumberInput = ({ isSelected, number, onClick }) => {
         return (
@@ -82,11 +80,11 @@ const ExpandedCard = ({ canRsvp, eventName, src, date, guestEventId, hasRsvpd, i
                             {blurb}
                         </div>
                         {
-                            showRsvpForm
-                                ? <RsvpForm />
-                                : <div className="absolute bottom-10 w-full italic">
+                            hasRsvpd
+                                ? <div className="absolute bottom-10 w-full italic">
                                     You have already Rsvpd for this event. If you think this is an error or the number of guests attending has changed please get in touch with Sachintha or Pooja.
                                 </div>
+                                : <RsvpForm />
                         }
                     </div>
                 </motion.div>
