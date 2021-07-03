@@ -94,35 +94,3 @@ const ExpandedCard = ({ eventName, src, date, guestEventId, hasRsvpd, id, blurb,
 }
 
 export default ExpandedCard
-
-
-
-        // <motion.div className="h-full min-h-[600px] w-screen absolute z-30 bg-white">
-        //     <div className="fixed top-0 bottom-0 h-full w-full bg-white z-30 sm:inset-y-1/20 sm:inset-x-1/10 2xl:inset-x-1/4 m-auto rounded-md overflow-auto ">
-        //         <CardPhoto src={src} heading={eventName} className="h-1/3 lg:h-2/5 lg:rounded-t-lg" onClick={onClick} objectPosition={objectPosition} />
-        //         <div className="bg-white h-2/3 min-h-[400px]">
-        //             <motion.div className="h-2/3 min-h-[550px] lg:h-3/5 px-10 shadow-md lg:rounded-b-lg"
-        //                 initial={{ opacity: 0 }}
-        //                 animate={{ opacity: 1 }}
-        //                 transition={{ delay: 0.3, duration: 0.2 }} >
-        //                 <div className="relative h-full">
-        //                     <h1 className="pt-10 relative text-center text-lg 2xl:text-4xl uppercase font-semibold text-secondary sm:mb-10">{date}</h1>
-        //                     <div className="relative flex flex-row mt-2 2xl:text-lg">
-        //                         <h1 className="mr-4 font-semibold text-primary">Where: </h1>
-        //                         <p>{location}</p>
-        //                     </div>
-        //                     <div className="mt-5 xl:mt-10 2xl:text-lg">
-        //                         {blurb}
-        //                     </div>
-        //                     {
-        //                         showRsvpForm
-        //                             ? <RsvpForm />
-        //                             : <div className="absolute bottom-10 w-full italic">
-        //                                 You have already Rsvpd for this event. If you think this is an error or the number of guests attending has changed please get in touch with Sachintha or Pooja.
-        //                             </div>
-        //                     }
-        //                 </div>
-        //             </motion.div>
-        //         </div>
-        //     </div>
-        // </motion.div>

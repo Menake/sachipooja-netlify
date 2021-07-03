@@ -65,10 +65,10 @@ const GuestRsvp = ({ guest }) => {
         ? (
             <div className="h-full w-full absolute">
                 <HomeButton />
-                <div className="h-1/5 w-full mt-20 sm:top-40 sm:mt-0 sm:pt-20">
+                <div className="relative w-full mt-32 h-1/5 sm:mb-0 sm:top-40 sm:mt-0 sm:pt-20">
                     <p className="text-center h-10 mx-5 my-auto text-3xl font-semibold sm:text-4xl text-secondary">Dear {addressedTo}</p>
                 </div>
-                <div className="relative flex flex-col sm:flex-row h-4/5 w-full justify-evenly items-center">
+                <div className="relative flex flex-col sm:flex-row h-4/5 min-h-[600px] w-full justify-evenly items-center">
                     {events.map(event => (
                         <AnimateSharedLayout key={event.id}>
                             <Card
