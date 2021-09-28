@@ -8,11 +8,11 @@ import ExpandedCard from '@components/cards/ExpandedCard';
 const Card = ({ event, id, numberOfGuests, name }) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const { blurb, name: eventName, imageSrc: src, date, location, imagePosition: objectPosition, guestEventId, hasRsvpd } = event;
+    const { blurb, name: eventName, imageSrc: src, date, time, location, imagePosition: objectPosition, guestEventId, hasRsvpd } = event;
 
 
     const collapsedProps = { src, eventName, objectPosition }
-    const expandedProps = { blurb, date, eventName, guestEventId, hasRsvpd, id, location, name, numberOfGuests, objectPosition, src }
+    const expandedProps = { blurb, date, time, eventName, guestEventId, hasRsvpd, id, location, name, numberOfGuests, objectPosition, src }
 
     const onFormSubmit = () => {
         setIsOpen(false);

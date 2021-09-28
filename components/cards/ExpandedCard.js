@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 import CardPhoto from '@components/cards/CardPhoto';
 
-const ExpandedCard = ({ eventName, src, date, guestEventId, hasRsvpd, id, blurb, location, numberOfGuests, name, objectPosition, onClick, onFormSubmit }) => {
-    const [selectedNumberOfGuests, setSelectedNumberOfGuests] = useState(0);
+const ExpandedCard = ({ eventName, src, date, time, guestEventId, hasRsvpd, id, blurb, location, numberOfGuests, name, objectPosition, onClick, onFormSubmit }) => {
+    const [selectedNumberOfGuests, setSelectedNumberOfGuests] = useState(1);
     const guestsArray = Array.from({ length: numberOfGuests }, (_, i) => i + 1);
 
     const NumberInput = ({ isSelected, number, onClick }) => {
@@ -71,7 +71,8 @@ const ExpandedCard = ({ eventName, src, date, guestEventId, hasRsvpd, id, blurb,
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.2 }} >
                     <div>
-                        <h1 className="pt-10 relative text-center text-lg 2xl:text-4xl uppercase font-semibold text-secondary sm:mb-10">{date}</h1>
+                        <h1 className="pt-10 relative text-center text-lg 2xl:text-4xl uppercase font-semibold text-secondary">{date}</h1>
+                        <h3 className="sm:pt-5 relative text-center 2xl:text-2xl uppercase text-secondary mb-5">{time}</h3>
                         <div className="relative flex flex-row mt-2 2xl:text-lg">
                             <h1 className="mr-4 font-semibold text-primary">Where: </h1>
                             <p>{location}</p>

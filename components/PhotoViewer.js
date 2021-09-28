@@ -31,7 +31,7 @@ const PhotoViewer = () => {
     );
 
     return (
-        <div>
+        <div className="relative">
             <div className="relative flex flex-col w-screen mb-32 lg:mt-56">
                 <PhotoContainer>
                     <InviteMessage className="w-full mb-20 mt-7 z-50 w-full xl:absolute xl:mt-10 xl:p-0 xl:w-2/5 xl:right-0" />
@@ -86,7 +86,7 @@ const PhotoViewer = () => {
                         textClass="sm:float-right sm:text-right" />
                 </PhotoContainer>
             </div>
-            <div className="absolute left-0 bottom-0 z-0 w-3/4 max-w-5xl opacity-25">
+            <div className="absolute left-0 -bottom-20 md:-bottom-96 left-0 z-0 w-3/4 max-w-5xl opacity-20">
                 <img src="/galle.png" className="object-fit" />
             </div>
         </div>

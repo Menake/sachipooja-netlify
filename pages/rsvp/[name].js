@@ -22,8 +22,6 @@ export const getServerSideProps = async (context) => {
     const guestEvents = (await db.collection('guests').doc(guest.id).collection('events').get()).docs
         .map(doc => ({ id: doc.id, ...doc.data() }));
 
-    console.log(guestEvents)
-
     const guestEventIds = guestEvents.map(event => event.eventId);
 
     // get the events for the guest
@@ -39,8 +37,6 @@ export const getServerSideProps = async (context) => {
                 hasRsvpd: guestEvent.hasRsvpd
             }
         })
-
-    console.log(events);
 
     guest.events = events;
 
