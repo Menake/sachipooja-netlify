@@ -22,7 +22,7 @@ const faqs =
         },
         {
             question: 'What is the RSVP deadline?',
-            answer: 'Due to COVID we are allowing RSVP\'s until the end of Friday 3 October. Please RSVP by then so that we may continue with catering preperations and table arrangements.'
+            answer: 'Due to COVID we are allowing RSVP\'s until the end of Friday 8th October. Please RSVP by then so that we may continue with catering preperations and table arrangements.'
         },
         {
             question: 'Where and when will the events be held?',
