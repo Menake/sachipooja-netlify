@@ -31,7 +31,7 @@ const Hero = () => {
                     }}
                 >
                     <div className="absolute bottom-10 right-10 text-2xl md:text-6xl font-bold text-secondary float-right">
-                        Nov<span className="text-primary">'21</span>
+                        April<span className="text-primary">'22</span>
                     </div>
                 </motion.div>
                 <motion.div
