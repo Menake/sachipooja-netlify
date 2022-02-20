@@ -67,12 +67,12 @@ const GuestRsvp = ({ guest }) => {
     return events.length > 0
         ? (
             <>
-                <div className="h-screen w-full min-h-[800px]">
+                <div className="h-screen relative w-full min-h-[800px]">
                     <HomeButton />
                     <div className="w-full h-1/10 mt-10 mb-10 sm:mb-0">
                         <p className="text-center h-10 mx-5 my-auto text-3xl font-semibold sm:text-4xl text-secondary">Dear {addressedTo}</p>
                     </div>
-                    <div className="w-full h-4/5 flex flex-col sm:flex-row w-full justify-evenly items-center overflow-auto">
+                    <div className="w-full flex flex-col sm:flex-row w-full justify-evenly items-center overflow-auto sm:h-4/5">
                         {events.map(event => (
                             <AnimateSharedLayout key={event.id}>
                                 <Card
@@ -83,28 +83,30 @@ const GuestRsvp = ({ guest }) => {
                             </AnimateSharedLayout>
                         ))}
                     </div>
-                    <motion.div
-                        className="w-full"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1, transition: { delay: 0 } }}
-                    >
-                        <div className="absolute flex flex-col justify-center items-center bottom-0 inset-x-0 w-full">
-                            <div className="text-regular text-center mb-5">FAQs</div>
-                            <motion.img
-                                transition={{
-                                    y: {
-                                        duration: 0.4,
-                                        yoyo: 'Infinity',
-                                        ease: 'easeOut',
-                                    },
-                                }}
-                                animate={{ y: [0, -15] }}
-                                className="w-8 sm:w-11"
-                                src="/arrow.svg"
-                            />
-                        </div>
-                    </motion.div>
                 </div>
+
+                <motion.div
+                    className="relative w-full -mt-10 mb-20"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { delay: 0 } }}
+                >
+                    <div className="absolute flex flex-col justify-center items-center bottom-0 inset-x-0 w-full">
+                        <div className="text-regular text-center mb-5">FAQs</div>
+                        <motion.img
+                            transition={{
+                                y: {
+                                    duration: 0.4,
+                                    yoyo: 'Infinity',
+                                    ease: 'easeOut',
+                                },
+                            }}
+                            animate={{ y: [0, -15] }}
+                            className="w-8 sm:w-11"
+                            src="/arrow.svg"
+                        />
+                    </div>
+                </motion.div>
+
                 <div className="h-full w-full flex flex-col items-center justify-center mb-20 sm:flex-row">
                     {showCeremonyFAQ && (
                         <div className='px-5 sm:px-1 sm:px-32'>
@@ -113,7 +115,7 @@ const GuestRsvp = ({ guest }) => {
                     )}
                     {showReceptionFAQ && (
                         <div className='px-5 mt-20 sm:mt-0 sm:px-32'>
-                            <ReceptionQA/>
+                            <ReceptionQA />
                         </div>
                     )}
                 </div>

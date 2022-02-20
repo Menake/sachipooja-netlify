@@ -62,9 +62,9 @@ const receptionQA =
         }
     ]
 
-const QA = ({qas, title, className}) => {
-    const faqElements = qas.map(faq => (
-        <div className="mt-10">
+const QA = ({ qas, title, className }) => {
+    const faqElements = qas.map((faq, idx) => (
+        <div key={idx} className="mt-10">
             <div className='text-secondary font-semibold text-lg'>{faq.question}</div>
             <div className='mt-5 text-primary'>{faq.answer}</div>
         </div>
@@ -79,16 +79,16 @@ const QA = ({qas, title, className}) => {
 }
 
 export const ReceptionQA = () => <QA qas={receptionQA} title='Reception' />
-export const CeremonyQA = ({className}) => <QA qas={ceremonyQA} title='Ceremony' className={className} />
+export const CeremonyQA = ({ className }) => <QA qas={ceremonyQA} title='Ceremony' className={className} />
 
 
 
 
 
- 
- 
- 
 
 
 
- 
+
+
+
+
