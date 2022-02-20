@@ -4,6 +4,8 @@ import { db } from "../../firebase";
 import { AnimateSharedLayout } from 'framer-motion';
 import Link from "next/link";
 import Card from '@components/cards/Card';
+import { ReceptionQA, CeremonyQA } from '@components/QA'
+import { motion } from 'framer-motion'
 
 export const getServerSideProps = async (context) => {
     const guestName = context.params.name;
@@ -46,7 +48,7 @@ export const getServerSideProps = async (context) => {
 }
 
 const HomeButton = () => (
-    <div className="w-full h-1/10 z-10">
+    <div className="w-full h-1/10 z-10 top-0">
         <Link href="/" >
             <svg xmlns="http://www.w3.org/2000/svg" className="ml-5 mt-8 h-8 w-8 text-primary cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -57,25 +59,65 @@ const HomeButton = () => (
 
 const GuestRsvp = ({ guest }) => {
     const { addressedTo, id, name, numberOfGuests, events = [] } = guest;
+
+    // TODO: add faqs to database
+    const showCeremonyFAQ = events.filter(event => event.id === "I8ljd4X7nABMwqFDwyMH").length > 0;
+    const showReceptionFAQ = events.filter(event => event.id === "22F80XEWlOANchLsY5aC").length > 0;
+
     return events.length > 0
         ? (
-            <div className="h-full w-full absolute min-h-[800px]">
-                <HomeButton />
-                <div className="relative w-full h-1/10 mt-10 mb-10 sm:mb-0 sm:pt-20">
-                    <p className="text-center h-10 mx-5 my-auto text-3xl font-semibold sm:text-4xl text-secondary">Dear {addressedTo}</p>
+            <>
+                <div className="h-screen w-full min-h-[800px]">
+                    <HomeButton />
+                    <div className="w-full h-1/10 mt-10 mb-10 sm:mb-0">
+                        <p className="text-center h-10 mx-5 my-auto text-3xl font-semibold sm:text-4xl text-secondary">Dear {addressedTo}</p>
+                    </div>
+                    <div className="w-full h-4/5 flex flex-col sm:flex-row w-full justify-evenly items-center overflow-auto">
+                        {events.map(event => (
+                            <AnimateSharedLayout key={event.id}>
+                                <Card
+                                    id={id}
+                                    event={event}
+                                    name={name}
+                                    numberOfGuests={numberOfGuests} />
+                            </AnimateSharedLayout>
+                        ))}
+                    </div>
+                    <motion.div
+                        className="w-full"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1, transition: { delay: 0 } }}
+                    >
+                        <div className="absolute flex flex-col justify-center items-center bottom-0 inset-x-0 w-full">
+                            <div className="text-regular text-center mb-5">FAQs</div>
+                            <motion.img
+                                transition={{
+                                    y: {
+                                        duration: 0.4,
+                                        yoyo: 'Infinity',
+                                        ease: 'easeOut',
+                                    },
+                                }}
+                                animate={{ y: [0, -15] }}
+                                className="w-8 sm:w-11"
+                                src="/arrow.svg"
+                            />
+                        </div>
+                    </motion.div>
                 </div>
-                <div className="relative w-full h-4/5 flex flex-col sm:flex-row w-full justify-evenly items-center overflow-auto">
-                    {events.map(event => (
-                        <AnimateSharedLayout key={event.id}>
-                            <Card
-                                id={id}
-                                event={event}
-                                name={name}
-                                numberOfGuests={numberOfGuests} />
-                        </AnimateSharedLayout>
-                    ))}
+                <div className="h-full w-full flex flex-col items-center justify-center mb-20 sm:flex-row">
+                    {showCeremonyFAQ && (
+                        <div className='px-5 sm:px-1 sm:px-32'>
+                            <CeremonyQA />
+                        </div>
+                    )}
+                    {showReceptionFAQ && (
+                        <div className='px-5 mt-20 sm:mt-0 sm:px-32'>
+                            <ReceptionQA/>
+                        </div>
+                    )}
                 </div>
-            </div>
+            </>
         )
         : (
             <div className="h-screen w-screen flex flex-col justify-center items-center">

@@ -1,53 +1,94 @@
-const faqs =
+const ceremonyQA =
     [
         {
-            question: 'What are the agenda details for the wedding, considering COVID-19?',
-            answer: 'We are currently waiting to find out what the COVID-19 announcments will reveal around lockdown levels. We will keep you informed about decisions around the wedding contingent on these announcements.'
+            question: 'What should I wear?',
+            answer: 'Formal attire or traditional wear would be perfect!'
         },
         {
-            question: 'Am I able to bring a plus one to the wedding?',
-            answer: 'While we would love to celebrate with your loved ones, if we have not addressed your plus one as a name on the invitation card, unfortunately due to the capacity of our venue, we will not be able to extend the invite.'
+            question: 'What is the RSVP deadline? ',
+            answer: 'By the 2nd of March.'
         },
         {
-            question: 'What should I wear to the wedding?',
-            answer: 'We request that you wear formal attire to the wedding, i.e. suit, tie and dresses or formal traditional clothing i.e. kurta, sari etc.'
+            question: 'Is there parking available? ',
+            answer: 'There are about 40 spots to park onsite but an abundance of roadside parking along Wentworth Avenue, Papatoetoe.'
         },
         {
-            question: 'Is there parking available?',
-            answer: 'Yes, there will be parking available on-site.'
+            question: 'What type of food and drinks will be served?',
+            answer: 'Indian food, we will begin with welcome drinks and snacks and have an Indian buffet with many items being served.'
         },
         {
-            question: 'Do you have a gift registry?',
-            answer: 'We will be in touch with you around this closer to the date of the wedding.'
+            question: 'Will the ceremony be held indoors?',
+            answer: 'Yes, the ceremony will be held on the top floor of our venue.'
         },
         {
-            question: 'What is the RSVP deadline?',
-            answer: 'Due to COVID we are allowing RSVP\'s until the end of Friday 8th October. Please RSVP by then so that we may continue with catering preperations and table arrangements.'
+            question: 'Is there a gifts registry?',
+            answer: 'Your presence means the world to us and you do not need to get us a gift, however, should you wish to bless us with a gift, here is the link to our registry.'
         },
         {
-            question: 'Where and when will the events be held?',
-            answer: 'Please refer to the RSVP details for location and start and end times of events. They will be held indoors. '
-        },
-        {
-            question: 'Do you have any agenda details available?',
-            answer: 'These are currently still being worked on considering the current issue with COVID 19, however we will be looking to release a program shortly indicating when to arrive, when food and drinks are served as well as specific ceremonial times.'
-        },
-        {
-            question: 'What if I have more questions?',
-            answer: 'Please feel free to contact Sachi or Pooja for any further clarifications or questions that you may have.'
+            question: 'What if I have more questions? ',
+            answer: 'Get in touch with us 😊 Pooja (021 268 2257) and Sachintha (021 027 11157).'
         }
     ]
 
-export const QA = () => {
-    const faqElements = faqs.map(faq => (
+const receptionQA =
+    [
+        {
+            question: 'What should I wear?',
+            answer: 'Formal attire 😊'
+        },
+        {
+            question: 'What is the RSVP deadline? ',
+            answer: 'By the 28th of February please'
+        },
+        {
+            question: 'Is there parking available? ',
+            answer: 'Yes at the entrance of the venue.'
+        },
+        {
+            question: 'What type of food and drinks will be served?',
+            answer: 'European style food will be served, we will have alcoholic and non-alcoholic beverages served also.'
+        },
+        {
+            question: 'Will the ceremony be held indoors?',
+            answer: 'Yes mostly, but there is space outside for guests to mingle.'
+        },
+        {
+            question: 'Is there a gifts registry?',
+            answer: 'Your presence means the world to us and you do not need to get us a gift, however, should you wish to bless us with a gift, here is the link to our registry.'
+        },
+        {
+            question: 'What if I have more questions? ',
+            answer: 'Get in touch with us 😊 Pooja (021 268 2257) and Sachintha (021 027 11157).'
+        }
+    ]
+
+const QA = ({qas, title, className}) => {
+    const faqElements = qas.map(faq => (
         <div className="mt-10">
             <div className='text-secondary font-semibold text-lg'>{faq.question}</div>
             <div className='mt-5 text-primary'>{faq.answer}</div>
         </div>
     ))
 
-    return (<div className='pb-10 md:pt-32 xl:pb-20 relative w-4/5 mx-auto mb-6 max-w-5xl'>
-        <h1 className="font-semibold text-2xl md:text-4xl text-secondary">Questions & <span className="text-primary">Answers</span></h1>
-        {faqElements}
-    </div>)
+    return (
+        <div className={className}>
+            <h1 className="font-semibold text-2xl md:text-4xl text-secondary ">{title} Questions & <span className="text-primary">Answers</span></h1>
+            {faqElements}
+        </div>
+    )
 }
+
+export const ReceptionQA = () => <QA qas={receptionQA} title='Reception' />
+export const CeremonyQA = ({className}) => <QA qas={ceremonyQA} title='Ceremony' className={className} />
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+ 
