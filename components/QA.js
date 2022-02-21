@@ -6,7 +6,7 @@ const ceremonyQA =
         },
         {
             question: 'What is the RSVP deadline? ',
-            answer: 'By the 2nd of March.'
+            answer: 'By the 2nd of March please.'
         },
         {
             question: 'Is there parking available? ',
@@ -22,7 +22,7 @@ const ceremonyQA =
         },
         {
             question: 'Is there a gifts registry?',
-            answer: 'Your presence means the world to us and you do not need to get us a gift, however, should you wish to bless us with a gift, here is the link to our registry.'
+            answer: 'Your presence means the world to us and you do not need to get us a gift, however, should you wish to bless us with a gift, we will have a wishing well at our event.'
         },
         {
             question: 'What if I have more questions? ',
@@ -38,7 +38,7 @@ const receptionQA =
         },
         {
             question: 'What is the RSVP deadline? ',
-            answer: 'By the 28th of February please'
+            answer: 'By the 2nd of March please'
         },
         {
             question: 'Is there parking available? ',
@@ -54,7 +54,7 @@ const receptionQA =
         },
         {
             question: 'Is there a gifts registry?',
-            answer: 'Your presence means the world to us and you do not need to get us a gift, however, should you wish to bless us with a gift, here is the link to our registry.'
+            answer: 'Your presence means the world to us and you do not need to get us a gift, however, should you wish to bless us with a gift, we will have a wishing well at our event.'
         },
         {
             question: 'What if I have more questions? ',
