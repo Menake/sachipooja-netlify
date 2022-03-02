@@ -46,7 +46,7 @@ const receptionQA =
         },
         {
             question: 'What type of food and drinks will be served?',
-            answer: 'European style food will be served, we will have alcoholic and non-alcoholic beverages served also.'
+            answer: 'Indian & Sri Lankan style food will be served, we will have alcoholic and non-alcoholic beverages served also.'
         },
         {
             question: 'Will the ceremony be held indoors?',
